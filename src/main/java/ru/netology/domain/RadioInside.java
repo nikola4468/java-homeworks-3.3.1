@@ -2,12 +2,19 @@ package ru.netology.domain;
 
 public class RadioInside {
 
-    private int volumeMax = 10;
+    private int volumeMax = 100;
     private int volumeMin = 0;
     public int currentVolume;
-    private int stationMax = 9;
+    public int stations = 10;
     private int stationMin = 0;
     public int currentStation;
+
+    public RadioInside() {
+    }
+
+    public RadioInside(int stations) {
+        this.stations = stations;
+    }
 
     public void setCurrentVolume(int currentVolume) {
         this.currentVolume = currentVolume;
@@ -23,13 +30,13 @@ public class RadioInside {
         return currentVolume;
     }
 
-    public void IncreaseVolume() {
+    public void increaseVolume() {
         if (currentVolume < volumeMax) {
             this.currentVolume++;
         } else this.currentVolume = volumeMax;
     }
 
-    public void DecreaseVolume() {
+    public void decreaseVolume() {
         if (currentVolume > volumeMin) {
             this.currentVolume--;
         } else this.currentVolume = volumeMin;
@@ -37,8 +44,8 @@ public class RadioInside {
 
     public void setCurrentStation(int currentStation) {
         this.currentStation = currentStation;
-        if (currentStation >= stationMax) {
-            this.currentStation = stationMax;
+        if (currentStation >= stations - 1) {
+            this.currentStation = stations - 1;
         }
         if (currentStation <= stationMin) {
             this.currentStation = stationMin;
@@ -49,24 +56,19 @@ public class RadioInside {
         return currentStation;
     }
 
-    public void NextStation() {
-        if (currentStation < stationMax) {
+    public void nextStation() {
+        if (currentStation < stations - 1) {
             this.currentStation++;
         } else {
             this.currentStation = stationMin;
         }
     }
 
-    public void PrevStation() {
-
+    public void prevStation() {
         if (currentStation > stationMin) {
             this.currentStation--;
         } else {
-            this.currentStation = stationMax;
+            this.currentStation = stations - 1;
         }
-    }
-
-    public void Station() {
-        this.currentStation = getCurrentStation();
     }
 }
