@@ -2,12 +2,21 @@ package ru.netology.domain;
 
 public class RadioInside {
 
-    private int volumeMax = 10;
+    private int volumeMax = 100;
     private int volumeMin = 0;
     public int currentVolume;
+    public int stations;
     private int stationMax = 9;
     private int stationMin = 0;
     public int currentStation;
+
+    public RadioInside (){
+    }
+
+    public RadioInside(int stations) {
+        this.stations = stations;
+        this.stationMax = stations - 1;
+    }
 
     public void setCurrentVolume(int currentVolume) {
         this.currentVolume = currentVolume;
