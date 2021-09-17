@@ -54,7 +54,7 @@ class RadioInsideTest {
 
     @Test
     public void shouldNextStation() {
-        RadioInside station = new RadioInside(11);
+        RadioInside station = new RadioInside(20);
         station.setCurrentStation(-1);
         station.NextStation();
         assertEquals(1, station.getCurrentStation());
@@ -64,13 +64,13 @@ class RadioInsideTest {
         station.setCurrentStation(1);
         station.NextStation();
         assertEquals(2, station.getCurrentStation());
-        station.setCurrentStation(9);
+        station.setCurrentStation(18);
         station.NextStation();
-        assertEquals(10, station.getCurrentStation());
-        station.setCurrentStation(10);
+        assertEquals(19, station.getCurrentStation());
+        station.setCurrentStation(19);
         station.NextStation();
         assertEquals(0, station.getCurrentStation());
-        station.setCurrentStation(11);
+        station.setCurrentStation(20);
         station.NextStation();
         assertEquals(0, station.getCurrentStation());
     }
