@@ -102,22 +102,16 @@ class RadioInsideTest {
     public void shouldSetCurrentVolume() {
         RadioInside station = new RadioInside();
         station.setCurrentStation(-1);
-//        station.station();
         assertEquals(0, station.getCurrentStation());
         station.setCurrentStation(0);
-//        station.station();
         assertEquals(0, station.getCurrentStation());
         station.setCurrentStation(1);
-//        station.station();
         assertEquals(1, station.getCurrentStation());
         station.setCurrentStation(8);
-//        station.station();
         assertEquals(8, station.getCurrentStation());
         station.setCurrentStation(9);
-//        station.station();
         assertEquals(9, station.getCurrentStation());
         station.setCurrentStation(10);
-//        station.station();
         assertEquals(9, station.getCurrentStation());
     }
 }
